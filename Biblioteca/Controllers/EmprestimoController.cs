@@ -26,6 +26,7 @@ namespace Biblioteca.Controllers
             
             if(viewModel.Emprestimo.Id == 0)
             {
+                viewModel.Emprestimo.Devolvido = false;
                 emprestimoService.Inserir(viewModel.Emprestimo);
             }
             else

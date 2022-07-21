@@ -38,14 +38,24 @@ namespace Biblioteca.Controllers
                 ViewData["Erro"] = "Senha inválida";
                 return View();
             }
+            else if(login == "admin")
+            {
+                HttpContext.Session.SetString("user", "admin");    
+                return RedirectToAction("Admin");
+            }
             else
             {
-                HttpContext.Session.SetString("user", "admin");
+                HttpContext.Session.SetString("user", login);
                 return RedirectToAction("Index");
             }
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Admin()
         {
             return View();
         }

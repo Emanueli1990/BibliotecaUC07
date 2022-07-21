@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9DpOaB9sKMRDZpZXjtHXiIwOmYcQtjzaoAoN6YWuXtG3k0/bqBQZkJR+5IhgUm/ReB1c3ChxTwBEIDsu+Zr53w==",
+  "dgSpecHash": "XxRLwDeN2kUAaLqsnQ0UBdwKPKM9/EQzYMFcMuHnrVdXJ6NKJ8pnQ1f5YguFhOa0HDKJkQPcooz+v2z+qIVPRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\emanu\\OneDrive\\Documentos\\CURSOS DA MANU\\SENAC\\UC07\\ativ 1\\Biblioteca\\Biblioteca.csproj",
+  "projectFilePath": "C:\\Users\\emanu\\OneDrive\\Documentos\\CURSOS DA MANU\\SENAC\\UC7\\ativ 1\\Biblioteca\\Biblioteca.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emanu\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",
     "C:\\Users\\emanu\\.nuget\\packages\\microsoft.entityframeworkcore\\3.0.0\\microsoft.entityframeworkcore.3.0.0.nupkg.sha512",

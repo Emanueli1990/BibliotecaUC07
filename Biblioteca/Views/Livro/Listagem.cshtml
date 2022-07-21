@@ -2,6 +2,34 @@
 @{
     ViewData["Title"] = "Listagem de Livros";
 }
+
+@{
+    List<Livro>ModelPart = new List<Livro>();
+    List<Livro>ModelList = new List<Livro>();
+    int Page = 1;
+    ModelList = Model.ToList();
+    
+
+    string[] splitPath = Context.Request.Path.ToString().Split("/");
+    
+    try{        
+        Page = Convert.ToInt32(splitPath[splitPath.Count() - 1]);
+    }
+    catch{
+        Page = 1;
+    }
+
+   if(Page == 1)
+   {
+       ModelPart = ModelList.Take(10).ToList();
+   }
+   else if(Page > 1) {
+       ModelPart = ModelList.Skip((Page*10) - 10).Take(10).ToList();
+   }
+    
+
+
+}
 <div class="row">
     <div class="col-md-12">
     <form class="form-inline" method="POST">
@@ -31,7 +59,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach(Livro l in Model)
+                @foreach(Livro l in ModelPart)
                 {
                 <tr>
                     <td>@l.Id</td>
@@ -43,5 +71,47 @@
                 }
             </tbody>
         </table>
+    </div>
+    <div class="col-md-12">
+        <nav aria-label="Page navigation example" >
+            <ul class="pagination">
+                @{
+                    if(ModelList.Count()/10 < 1){
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    }
+                    else{
+                        if((Page - 1) < 1)
+                        {
+                            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                        }
+                        else
+                        {
+                            <li class="page-item"><a class="page-link" href="/Livro/Listagem/@(Page - 1)">Previous</a></li>
+                        }
+                    }
+                }
+                
+                @for (int i = 1; i <= Convert.ToInt32((ModelList.Count()/10)) + 1; i++)                
+                {
+                    <li class="page-item"><a class="page-link" href="/Livro/Listagem/@(i)">@(i)</a></li>
+                }
+
+                @{
+                    if(ModelList.Count()/10 < 1){
+                        <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+                    }
+                    else{
+                        if((Page) > (ModelList.Count()/10))
+                        {
+                            <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+                        }
+                        else{
+                            <li class="page-item"><a class="page-link" href="/Livro/Listagem/@(Page + 1)">Next</a></li>
+                        }
+                    }
+                }
+                
+            </ul>
+        </nav>
     </div>
 </div>

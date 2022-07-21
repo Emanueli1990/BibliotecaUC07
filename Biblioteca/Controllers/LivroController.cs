@@ -7,7 +7,7 @@ namespace Biblioteca.Controllers
     {
         public IActionResult Cadastro()
         {
-            Autenticacao.CheckLogin(this);
+            //Autenticacao.CheckLogin(this);
             return View();
         }
 
@@ -30,7 +30,7 @@ namespace Biblioteca.Controllers
 
         public IActionResult Listagem(string tipoFiltro, string filtro)
         {
-            Autenticacao.CheckLogin(this);
+            //Autenticacao.CheckLogin(this);
             FiltrosLivros objFiltro = null;
             if(!string.IsNullOrEmpty(filtro))
             {
