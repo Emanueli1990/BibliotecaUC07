@@ -13,10 +13,7 @@ namespace Biblioteca.Controllers
                 controller.Request.HttpContext.Response.Redirect("/Home/Login");
                 
             }
-            else 
-            {
-               controller.Request.HttpContext.Response.Redirect("/Home/Login"); 
-            }
+            
         }
     }
 }

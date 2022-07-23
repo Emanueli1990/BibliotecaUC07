@@ -7,10 +7,10 @@ namespace Biblioteca.Models
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {                   
-            optionsBuilder.UseMySql("Server=localhost;DataBase=bancobiblioteca;Uid=root;");
+            optionsBuilder.UseMySql("Server=localhost;DataBase=biblioteca;Uid=root;");
         }
 
-        public DbSet<User> Users {get; set;}
+        public DbSet<usuarios> usuarios {get; set;}
         
     }
 }
